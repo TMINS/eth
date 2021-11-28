@@ -1,5 +1,6 @@
 <template>
   <div class="viewport">
+    <topbar />
     <div class="peak">
       <h4>ONE-STOP SHOP IN HONG KONG</h4>
       <h3>ETH MINING RIG SERVICE</h3>
@@ -23,7 +24,7 @@
     </div>
 
     <!--  -->
-    <div class="about">
+    <div class="about" v-scroll-reveal.reset>
       <h4 class="title-line">ABPUT US</h4>
       <p>
         Caismining ETH Professional Mining Rig have focused on cryptocurrency
@@ -34,11 +35,11 @@
       </p>
     </div>
     <!--  -->
-    <div class="about-img">
+    <div class="about-img" v-scroll-reveal.reset>
       <img src="~@/assets/about1.jpg" alt="" />
     </div>
     <!--  -->
-    <div class="banner">
+    <div class="banner" v-scroll-reveal.reset>
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -136,7 +137,7 @@
     </div>
 
     <!--  -->
-    <div class="computed"></div>
+    <computed />
 
     <!--  -->
     <div class="price">
@@ -202,6 +203,82 @@
         </div>
       </div>
     </div>
+
+    <!-- banner news -->
+    <div class="banner-news">
+      <div class="content">
+        <v-touch v-on:swipeleft="swiperleft" v-on:swiperight="swiperight">
+          <div v-for="(item, index) in bannerNewsList" :key="index">
+            <div class="item" v-if="newsIndex == index">
+              <p>{{ item.content }}</p>
+              <h4>{{ item.title }}</h4>
+            </div>
+          </div>
+        </v-touch>
+        <div class="doit">
+          <span
+            :class="index == newsIndex ? 'active' : ''"
+            v-for="(item, index) in bannerNewsList"
+            :key="index"
+          ></span>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="caismining">
+      <img src="~@/assets/caismining.jpg" alt="" />
+      <p>caismining</p>
+      <p>48 Posts</p>
+      <p>2,092 Followers</p>
+      <p>0 Following</p>
+      <a>See More</a>
+      <div class="btn flex">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          class="FollowBtn158509262__InstagramIcon FollowBtn158509262--isHover"
+        >
+          <path
+            d="M13.156.008c2.223.004 2.677.021 3.786.072 1.277.058 2.15.26 2.912.557a5.88 5.88 0 012.125 1.384 5.88 5.88 0 011.384 2.125c.296.763.499 1.635.557 2.912.055 1.194.07 1.63.072 4.331v1.23c-.002 2.701-.017 3.137-.072 4.33-.058 1.278-.26 2.15-.557 2.913a5.88 5.88 0 01-1.384 2.125 5.88 5.88 0 01-2.125 1.383c-.763.297-1.635.5-2.912.558-1.194.054-1.63.07-4.331.072h-1.23c-2.701-.002-3.137-.018-4.33-.072-1.278-.058-2.15-.261-2.913-.558a5.88 5.88 0 01-2.125-1.383A5.88 5.88 0 01.63 19.862c-.297-.763-.5-1.635-.558-2.912-.05-1.11-.068-1.564-.071-3.786v-2.32C.004 8.62.02 8.167.072 7.058.13 5.78.333 4.908.63 4.146A5.88 5.88 0 012.013 2.02 5.88 5.88 0 014.138.637C4.901.341 5.773.138 7.05.08 8.16.03 8.614.012 10.836.008zm-.28 2.161h-1.76c-2.408.003-2.829.018-3.967.07-1.17.053-1.805.249-2.228.413-.56.218-.96.478-1.38.897-.419.42-.679.82-.897 1.38-.164.422-.36 1.058-.413 2.227-.052 1.139-.067 1.56-.07 3.968v1.76c.003 2.408.018 2.829.07 3.967.054 1.17.25 1.805.413 2.228.218.56.478.96.898 1.38.42.419.82.679 1.38.897.422.164 1.057.36 2.227.413 1.096.05 1.527.065 3.708.069h2.279c2.18-.004 2.612-.02 3.708-.07 1.17-.053 1.805-.248 2.227-.412.56-.218.96-.478 1.38-.898.42-.42.68-.82.897-1.38.164-.422.36-1.057.413-2.227.05-1.096.066-1.527.07-3.708v-2.279c-.004-2.18-.02-2.611-.07-3.708-.053-1.17-.249-1.805-.413-2.227a3.716 3.716 0 00-.897-1.38c-.42-.42-.82-.68-1.38-.897-.422-.164-1.058-.36-2.227-.413-1.139-.052-1.56-.067-3.968-.07zm-.88 3.675a6.16 6.16 0 110 12.32 6.16 6.16 0 010-12.32zm0 2.161a3.999 3.999 0 100 7.998 3.999 3.999 0 000-7.998zM18.4 4.161a1.44 1.44 0 110 2.879 1.44 1.44 0 010-2.88z"
+            fill="current"
+            fill-rule="evenodd"
+          ></path>
+        </svg>
+        <span>Follow</span>
+      </div>
+    </div>
+
+    <!--  -->
+    <div class="operate">
+      <div
+        class="operate-item"
+        v-for="(item, index) in operateList"
+        :key="index"
+      >
+        <img :src="item.img" alt="" />
+        <div class="operate-item-action" v-if="item.show">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+              <path
+                d="M1 0h22a1 1 0 011 1v22a1 1 0 01-1 1H1a1 1 0 01-1-1V1a1 1 0 011-1z"
+              ></path>
+              <path
+                d="M15.333 8.667v10h-10v-10h10zm3.334-3.334v10H17V7H8.667V5.333h10z"
+                fill="#FFF"
+              ></path>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="btn">
+        <span>Load More</span>
+      </div>
+    </div>
+    <!--  -->
+
+    <div></div>
   </div>
 </template>
 
@@ -211,19 +288,30 @@ import "swiper/swiper-bundle.min.css";
 import productList from "./product";
 import compList from "./comp";
 import newsList from "./news";
+import operateList from "./operate";
+import bannerNewsList from "./bannerNews";
+import computed from "@/components/computed";
+import topbar from "@/components/topbar";
+
 export default {
   data() {
     return {
       productList: [],
       compList: [],
       newsList: [],
+      operateList: [],
+      bannerNewsList: [],
+      newsIndex: 0,
     };
   },
-
+  components: { computed,topbar },
   mounted() {
     this.productList = productList;
     this.compList = compList;
     this.newsList = newsList;
+    this.operateList = operateList;
+    this.bannerNewsList = bannerNewsList;
+
     new Swiper(".swiper-container", {
       slidesPerView: "auto",
       centeredSlides: true,
@@ -232,6 +320,22 @@ export default {
       // pagination: { el: ".swiper-pagination", clickable: true },
     });
   },
+  methods: {
+    swiperleft() {
+      if (this.newsIndex >= 2) {
+        this.newsIndex = 0;
+      } else {
+        this.newsIndex++;
+      }
+    },
+    swiperight() {
+      if (this.newsIndex <= 0) {
+        this.newsIndex = 2;
+      } else {
+        this.newsIndex--;
+      }
+    },
+  },
 };
 </script>
 
@@ -239,6 +343,9 @@ export default {
 .viewport {
   color: #ffffff;
   padding: 60px 0 0;
+  background: url("~@/assets/eth-bj.jpg") no-repeat;
+  background-size: 100%;
+  padding-top: 74px;
   .peak {
     padding: 0 24px;
     h3 {
@@ -549,6 +656,146 @@ export default {
       }
     }
   }
+  .banner-news {
+    height: 394px;
+    background: url("~@/assets/banner-news.png") no-repeat;
+    background-size: 100%;
+    .content {
+      width: 100%;
+      height: 100%;
+      padding: 100px 46px;
+      background: rgba($color: #000000, $alpha: 0.7);
+      .item {
+        text-align: center;
+        p {
+          font-size: 17px;
+          color: #ffffff;
+        }
+        h4 {
+          font-size: 14px;
+          color: #ffffff;
+          padding-top: 40px;
+        }
+      }
+      .doit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        span {
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          background: #ffffff;
+          margin-right: 20px;
+          border-radius: 50%;
+          font-size: 0;
+        }
+        span:last-child {
+          margin-right: 0;
+        }
+        .active {
+          width: 10px;
+          height: 10px;
+          position: relative;
+        }
+        .active:before {
+          content: "";
+          display: block;
+          width: 6px;
+          height: 6px;
+          position: absolute;
+          font-size: 0;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: #2d2e2d;
+
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  .caismining {
+    padding: 24px 20px;
+    background: #2d2e2d;
+    img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+    p {
+      margin: 8px 0 6px;
+      color: #ffffff;
+      font-size: 14px;
+    }
+    a {
+      text-decoration: underline;
+      color: #c7c7c7;
+      font-size: 14px;
+      display: inline-block;
+      margin-top: 12px;
+    }
+    .btn {
+      border: 1px solid #ffffff;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      height: 42px;
+      span {
+        padding-left: 8px;
+        color: #ffffff;
+      }
+      svg {
+        fill: #ffffff;
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+  .operate {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 24px 4px;
+    background: #2d2e2d;
+    .operate-item {
+      width: calc((100% - 4px - 4px) / 3);
+      margin-right: 4px;
+      margin-bottom: 4px;
+      position: relative;
+      font-size: 0;
+      img {
+        width: 100%;
+        height: 112px;
+      }
+      .operate-item-action {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        background: rgba(22, 22, 22, 0.6);
+        padding: 1px;
+        svg {
+          fill: #ffffff;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .operate-item:nth-child(3n) {
+      margin-right: 0;
+    }
+    .btn {
+      width: 160px;
+      height: 50px;
+      margin: 50px auto;
+      line-height: 50px;
+      text-align: center;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.49);
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
 }
 .title-line {
   letter-spacing: 4px;
@@ -562,7 +809,7 @@ export default {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 108px;
+  width: 155px;
   height: 5px;
   background: #a69494;
 }

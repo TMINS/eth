@@ -9,6 +9,7 @@
         <img src="~@/assets/brand2.png" alt="" />
         <img src="~@/assets/brand3.png" alt="" />
         <img src="~@/assets/brand4.png" alt="" />
+        <p style="width: 5%"></p>
         <img src="~@/assets/brand5.png" alt="" />
         <img src="~@/assets/brand6.png" alt="" />
         <img src="~@/assets/brand7.png" alt="" />
@@ -31,7 +32,7 @@
 
       <p>Tel:</p>
       <p>+852 9555 3489</p>
-      <div class="btn"></div>
+      <div class="btn">WHATSAPP NOW</div>
     </div>
 
     <!--  -->
@@ -51,8 +52,8 @@
         data-bbox="0 0 50 50"
         data-type="shape"
         xmlns="http://www.w3.org/2000/svg"
-        width="50"
-        height="50"
+        width="22"
+        height="22"
         viewBox="0 0 50 50"
       >
         <g>
@@ -64,22 +65,52 @@
     </div>
 
     <!--  -->
-
+    <div class="select">
+      <img v-if="selectVal == 'en'" src="~@/assets/USA.png" alt="" />
+      <img v-if="selectVal == 'zh'" src="~@/assets/HKG.png" alt="" />
+      <select name="selectKy" v-model="selectVal" ref="select">
+        <option value="en">English</option>
+        <option value="zh">Chinese</option>
+      </select>
+    </div>
     <!--  -->
 
     <div class="cais flex">
-        <div>
-            
-        </div>
-        <p>
-            
-        </p>
+      <div class="cais-info">
+        <p>CAIS <span></span></p>
+        <p>MINING</p>
+        <p>BLOCKCHAIN</p>
+      </div>
+      <p class="flex">
+        <img src="~@/assets/fasebook-icon.png" alt="" />
+        <img src="~@/assets/testing.png" alt="" />
+      </p>
     </div>
+
+    <!--  -->
+    <div class="copyright">
+      <p>
+        © 2021 by Caismining Blockchain<br />
+        Limited created
+      </p>
+    </div>
+
+    <floatbar />
   </div>
 </template>
 
 <script>
-export default {};
+import floatbar from "@/components/floatbar";
+export default {
+  data() {
+    return {
+      selectVal: "en",
+    };
+  },
+  components: { floatbar },
+  mounted() {},
+  methods: {},
+};
 </script>
 
 <style lang="scss" scoped>
@@ -110,6 +141,7 @@ export default {};
     }
   }
   .contact {
+    color: #fff;
     h4 {
       font-size: 14px;
       font-weight: bold;
@@ -131,9 +163,11 @@ export default {};
       background: #e8c061;
       border-radius: 10px;
       margin: 34px 0 44px 0;
+      letter-spacing: 4px;
     }
   }
   .menu {
+    color: #fff;
     h4 {
       font-size: 14px;
       font-weight: bold;
@@ -149,6 +183,8 @@ export default {};
         height: 8px;
         background: #e8c061;
         margin-right: 8px;
+
+        transform: rotate(45deg);
       }
     }
   }
@@ -156,6 +192,71 @@ export default {};
     display: flex;
     align-items: center;
     padding: 16px 0;
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .select {
+    margin: 40px 0;
+    position: relative;
+    select {
+      width: 180px;
+      height: 44px;
+      background-color: #fff;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      padding: 0 20px 0 40px;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      padding-right: 20px;
+      background-image: url("~@/assets/down.png");
+      background-repeat: no-repeat;
+      background-size: 16px auto;
+      background-position: calc(100% - 20px);
+      option {
+        padding: 0 20px;
+      }
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+    }
+  }
+  .cais {
+    align-items: center;
+    justify-content: space-between;
+    .cais-info {
+      color: #ffffff;
+      font-weight: bold;
+      line-height: 20px;
+      span {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        transform: rotate(45deg);
+        background: rgba(232, 192, 97, 1);
+        margin-left: 4px;
+      }
+    }
+    p {
+      align-items: center;
+      img {
+        margin-left: 16px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  .copyright {
+    font-size: 12px;
+    color: #fff;
+    padding: 62px 0 0;
   }
 }
 .gap {
