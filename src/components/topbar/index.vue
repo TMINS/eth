@@ -12,10 +12,25 @@
     </div>
     <div class="menu-list" v-if="active">
       <div>
-        <p :class="route == '/home' ? 'active':''">HOME</p>
+        <p
+          :class="route == '/home' ? 'active' : ''"
+          @click="routeLink('/home')"
+        >
+          HOME
+        </p>
         <p>NEWS</p>
-        <p :class="route == '/service'? 'active':''">SERVICES</p>
-        <p :class="route == '/about'? 'active':''">ABOUT</p>
+        <p
+          :class="route == '/service' ? 'active' : ''"
+          @click="routeLink('/service')"
+        >
+          SERVICES
+        </p>
+        <p
+          :class="route == '/about' ? 'active' : ''"
+          @click="routeLink('/about')"
+        >
+          ABOUT
+        </p>
         <p>SHOP</p>
         <div class="select">
           <img v-if="selectVal == 'en'" src="~@/assets/USA.png" alt="" />
@@ -61,6 +76,13 @@ export default {
   mounted() {
     this.route = this.$route.path;
   },
+  methods: {
+    routeLink(path) {
+      this.$router.push({
+        path,
+      });
+    },
+  },
 };
 </script>
 
@@ -75,6 +97,8 @@ export default {
   padding: 0 24px;
   .topbar-title {
     color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
     span {
       display: inline-block;
       width: 8px;
@@ -138,7 +162,7 @@ export default {
         color: #ffffff;
       }
     }
-    .active{
+    .active {
       color: #e8c061;
     }
   }
