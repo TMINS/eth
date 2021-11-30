@@ -12,11 +12,19 @@
     </div>
     <div class="menu-list" v-if="active">
       <div>
-        <p>HOME</p>
+        <p :class="route == '/home' ? 'active':''">HOME</p>
         <p>NEWS</p>
-        <p>SERVICES</p>
-        <p>ABOUT</p>
+        <p :class="route == '/service'? 'active':''">SERVICES</p>
+        <p :class="route == '/about'? 'active':''">ABOUT</p>
         <p>SHOP</p>
+        <div class="select">
+          <img v-if="selectVal == 'en'" src="~@/assets/USA.png" alt="" />
+          <img v-if="selectVal == 'zh'" src="~@/assets/HKG.png" alt="" />
+          <select name="selectKy" v-model="selectVal" ref="select">
+            <option value="en">English</option>
+            <option value="zh">Chinese</option>
+          </select>
+        </div>
         <p class="flex">
           Log In
           <svg
@@ -46,14 +54,22 @@ export default {
   data() {
     return {
       active: false,
+      selectVal: "en",
+      route: "home",
     };
+  },
+  mounted() {
+    this.route = this.$route.path;
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .topbar {
-  position: relative;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
   height: 74px;
   align-items: center;
   padding: 0 24px;
@@ -110,16 +126,52 @@ export default {
     top: 0;
     left: 0;
     background: rgba(10, 10, 10, 1);
-    padding: 42px;
+    padding: 36px;
     p {
       height: 50px;
       line-height: 50px;
       align-items: center;
       font-size: 13px;
       color: #ffffff;
+      font-weight: bold;
       svg {
         color: #ffffff;
       }
+    }
+    .active{
+      color: #e8c061;
+    }
+  }
+  .select {
+    margin: 40px 0;
+    position: relative;
+    select {
+      width: 180px;
+      height: 44px;
+      background-color: #fff;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      padding: 0 20px 0 40px;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      padding-right: 20px;
+      background-image: url("~@/assets/down.png");
+      background-repeat: no-repeat;
+      background-size: 16px auto;
+      background-position: calc(100% - 20px);
+      option {
+        padding: 0 20px;
+      }
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
     }
   }
 }
