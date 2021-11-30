@@ -124,10 +124,12 @@ export default {
       font-size: 14px;
       font-weight: bold;
       padding-bottom: 18px;
+      font-family: font16;
     }
     p {
       font-size: 14px;
       line-height: 21px;
+      font-weight: font18;
     }
     div {
       align-items: center;
@@ -143,13 +145,15 @@ export default {
   .contact {
     color: #fff;
     h4 {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
       padding-bottom: 18px;
+      font-family: font16;
     }
     p {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 21px;
+      font-family: font20;
     }
     .btn {
       width: 267px;
@@ -158,27 +162,31 @@ export default {
       text-align: center;
       line-height: 44px;
       color: #2d2e2d;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: bold;
       background: #e8c061;
       border-radius: 10px;
       margin: 34px 0 44px 0;
-      letter-spacing: 4px;
+      font-family: font2;
     }
   }
   .menu {
     color: #fff;
     h4 {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
       padding-bottom: 18px;
+      font-family: font16;
     }
     p {
-      line-height: 21px;
+      line-height: 24px;
       display: flex;
+      font-size: 16px;
+      font-family: font18;
       align-items: center;
       span {
         display: inline-block;
+
         width: 8px;
         height: 8px;
         background: #e8c061;
@@ -193,7 +201,8 @@ export default {
     align-items: center;
     padding: 16px 0;
     color: #fff;
-    font-size: 14px;
+    font-family: font20;
+    font-size: 16px;
   }
 
   .select {
@@ -231,10 +240,12 @@ export default {
   .cais {
     align-items: center;
     justify-content: space-between;
+    font-family: font2;
     .cais-info {
       color: #ffffff;
       font-weight: bold;
-      line-height: 20px;
+      font-size: 16px;
+      line-height: 16px;
       span {
         display: inline-block;
         width: 8px;
@@ -254,9 +265,10 @@ export default {
     }
   }
   .copyright {
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
     padding: 62px 0 0;
+    font-family: font18;
   }
 }
 .gap {

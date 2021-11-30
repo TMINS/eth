@@ -27,48 +27,48 @@
 
 @font-face {
   font-family: "font5";
-  src: url("~@/style/font/font1.woff2");
+  src: url("~@/style/font/font5.woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "font6";
-  src: url("~@/style/font/font1.woff2");
+  src: url("~@/style/font/font6.woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "font7";
-  src: url("~@/style/font/font1.woff2");
+  src: url("~@/style/font/font7.woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "font8";
-  src: url("~@/style/font/font1.woff2");
+  src: url("~@/style/font/font8.woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "font9";
-  src: url("~@/style/font/font1.woff2");
+  src: url("~@/style/font/font9.woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "font10";
-  src: url("~@/style/font/font1.woff2");
+  src: url("~@/style/font/font10.woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "font11";
-  src: url("~@/style/font/font1.woff2");
+  src: url("~@/style/font/font11.woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -80,14 +80,107 @@
 }
 @font-face {
   font-family: "font13";
-  src: url("~@/style/font/font1.woff2");
+  src: url("~@/style/font/font13.woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "font14";
-  src: url("~@/style/font/font1.woff2");
+  src: url("~@/style/font/font14.woff2");
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "font15";
+  src: url("~@/style/font/font15.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "font16";
+  src: url("~@/style/font/lulo-clean-w01-one-bold.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "font17";
+  src: url("~@/style/font/Oswald-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "font18";
+  src: url("~@/style/font/din-next-w01-light.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "font19";
+  src: url("~@/style/font/oswald-extralight.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "font20";
+  src: url("~@/style/font/dinnextltw23-ultralight.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "font21";
+  src: url("~@/style/font/dinneuzeitgroteskltw01_812426.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "font22";
+  src: url("~@/style/font/proxima-n-w01-reg.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "caudex";
+  src: url("~@/style/font/caudex.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mukta-Mahee";
+  src: url("~@/style/font/Mukta-Mahee.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Oswald-Medium";
+  src: url("//fonts.gstatic.com/s/oswald/v16/cgaIrkaP9Empe8_PwXbajPY6323mHUZFJMgTvxaG2iE.eot?#iefix");
+  src: url("//fonts.gstatic.com/s/oswald/v16/cgaIrkaP9Empe8_PwXbajPY6323mHUZFJMgTvxaG2iE.eot?#iefix")
+      format("eot"),
+    url("//fonts.gstatic.com/s/oswald/v16/cgaIrkaP9Empe8_PwXbajFtXRa8TVwTICgirnJhmVJw.woff2")
+      format("woff2"),
+    url("//fonts.gstatic.com/s/oswald/v16/cgaIrkaP9Empe8_PwXbajD8E0i7KZn-EPnyo3HZu7kw.woff")
+      format("woff"),
+    url("//fonts.gstatic.com/s/oswald/v16/cgaIrkaP9Empe8_PwXbajKCWcynf_cDxXwCLxiixG1c.ttf")
+      format("truetype"),
+    url("//fonts.gstatic.com/l/font?kit=cgaIrkaP9Empe8_PwXbajJbd9NUM7myrQQz30yPaGQ4&skey=4b4aed5676a34753&v=v16#Oswald")
+      format("svg");
+}
+
+@font-face {
+  font-family: "Oswald-Medium";
+  font-weight: 700;
+  src: url("//fonts.gstatic.com/s/oswald/v16/dI-qzxlKVQA6TUC5RKSb3_Y6323mHUZFJMgTvxaG2iE.eot?#iefix");
+  src: url("//fonts.gstatic.com/s/oswald/v16/dI-qzxlKVQA6TUC5RKSb3_Y6323mHUZFJMgTvxaG2iE.eot?#iefix")
+      format("eot"),
+    url("//fonts.gstatic.com/s/oswald/v16/dI-qzxlKVQA6TUC5RKSb31tXRa8TVwTICgirnJhmVJw.woff2")
+      format("woff2"),
+    url("//fonts.gstatic.com/s/oswald/v16/dI-qzxlKVQA6TUC5RKSb3z8E0i7KZn-EPnyo3HZu7kw.woff")
+      format("woff"),
+    url("//fonts.gstatic.com/s/oswald/v16/dI-qzxlKVQA6TUC5RKSb36CWcynf_cDxXwCLxiixG1c.ttf")
+      format("truetype"),
+    url("//fonts.gstatic.com/l/font?kit=dI-qzxlKVQA6TUC5RKSb35bd9NUM7myrQQz30yPaGQ4&skey=23b674776eaa386b&v=v16#Oswald")
+      format("svg");
 }

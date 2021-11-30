@@ -67,23 +67,25 @@ export default {};
     height: 100%;
     background: url("~@/assets/box-icon.png") repeat;
     background-size: auto;
-    padding: 80px 24px;
+    padding: 80px 18px;
   }
   h4 {
     font-size: 17px;
     color: #e8c601;
     padding-bottom: 24px;
     text-align: center;
+    font-family: Oswald-Medium;
   }
   h5 {
     font-size: 14px;
     text-align: center;
     color: #ffffff;
+    font-family: font19;
   }
   .calculator {
     background: #ffffff;
     border-radius: 5px;
-    font-family: "Mukta Mahee", sans-serif;
+    font-family: Mukta-Mahee, sans-serif;
     color: #6b6d7a;
     font-weight: 400;
     line-height: 1;
@@ -100,17 +102,21 @@ export default {};
         height: 32px;
         margin-left: 10px;
       }
+      .info {
+        padding-left: 12px;
+      }
       h4 {
         color: #46474f;
         font-weight: 800;
         font-size: 16px;
-        font-family: "Mukta Mahee", sans-serif;
+        font-family: "Mukta-Mahee", sans-serif;
+        padding-bottom: 0;
       }
       p {
         color: #9396a6;
         font-weight: 400;
         font-size: 12px;
-        font-family: "Mukta Mahee", sans-serif;
+        font-family: "Mukta-Mahee", sans-serif;
       }
     }
     .specs {
@@ -197,7 +203,7 @@ export default {};
       background: url("~@/assets/logo.svg") no-repeat;
       background-size: 16px;
       background-position: 28% 50%;
-      background: #f8f9fc;
+      background-color: #f8f9fc;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
       span {

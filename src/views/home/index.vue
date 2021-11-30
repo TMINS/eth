@@ -1,13 +1,19 @@
 <template>
   <div class="viewport">
     <topbar />
-    <div class="peak">
-      <h4>ONE-STOP SHOP IN HONG KONG</h4>
+    <div class="peak font2">
+      <h4>
+        ONE-STOP SHOP IN HONG <br />
+        <span></span>
+        <br />
+        KONG
+      </h4>
       <h3>ETH MINING RIG SERVICE</h3>
-      <h5>
-        There is no need to install and find the necessary accessories yourself.
-        Together with the best software ecological support, we have built the
-        most reliable ETH mining rig for your use.
+      <h5 class="font17">
+        There is no need to install and find the necessary <br />
+        accessories yourself. Together with the best <br />
+        software ecological support, we have built the most <br />
+        reliable ETH mining rig for your use.
       </h5>
       <div class="peak-btn1">
         <span>WHATAPP NOW</span>
@@ -27,10 +33,12 @@
     <div class="about" v-scroll-reveal.reset>
       <h4 class="title-line">ABPUT US</h4>
       <p>
-        Caismining ETH Professional Mining Rig have focused on cryptocurrency
-        technology research for more than 8 years. Combined with our team’s
-        first-class IT knowledge, we provide Hong Kong users with reliable ETH
-        mining technology solutions. Contact us now for the most reliable and
+        Caismining ETH Professional Mining Rig have <br />
+        focused on cryptocurrency technology research for <br />
+        more than 8 years. Combined with our team’s first- <br />
+        class IT knowledge, we provide Hong Kong users <br />
+        with reliable ETH mining technology solutions. <br />
+        Contact us now for the most reliable and <br />
         convenient mining solution.
       </p>
     </div>
@@ -145,7 +153,10 @@
     </div>
     <div class="built">
       <h4>Built-in monitoring and management software for your mining rig</h4>
-      <h5>Provides you with a complete monitoring program</h5>
+      <h5>
+        Provides you with a complete monitoring <br />
+        program
+      </h5>
       <img src="~@/assets/logo11.png" alt="" />
     </div>
     <div class="comp" v-for="(item, index) in compList" :key="index">
@@ -304,7 +315,7 @@ export default {
       newsIndex: 0,
     };
   },
-  components: { computed,topbar },
+  components: { computed, topbar },
   mounted() {
     this.productList = productList;
     this.compList = compList;
@@ -345,27 +356,33 @@ export default {
   padding: 60px 0 0;
   background: url("~@/assets/eth-bj.jpg") no-repeat;
   background-size: 100%;
-  padding-top: 74px;
+  padding-top: 134px;
   .peak {
     padding: 0 24px;
     h3 {
-      font-size: 27px;
-      letter-spacing: 4px;
+      font-size: 28px;
+      letter-spacing: 0px;
     }
     h4 {
-      font-size: 13px;
-      letter-spacing: 4px;
+      font-size: 14px;
+      // letter-spacing: 4px;
+      line-height: 24px;
+      padding-right: 20px;
     }
     h5 {
       font-size: 14px;
       color: rgb(232, 192, 97);
       margin: 27px 0;
+      font-weight: normal;
+      line-height: 28px;
+      font-family: Oswald-Medium;
     }
     .peak-btn1,
     .peak-btn2 {
       width: 220px;
       height: 52px;
       text-align: center;
+      font-size: 16px;
       line-height: 52px;
       border-radius: 10px;
       margin-bottom: 20px;
@@ -373,12 +390,14 @@ export default {
     .peak-btn1 {
       border: 1px solid rgba(232, 192, 97, 1);
       color: #e8c061;
+      font-family: font16;
     }
     .peak-btn2 {
       background: rgba(232, 192, 97, 1);
       color: #2d2e2d;
       border: 0px solid #e8c061;
       box-shadow: 1.41px 1.41px 27px -2px rgba(232, 192, 97, 65%);
+      font-family: font18;
       span::after {
         content: "";
         width: 6px;
@@ -417,14 +436,17 @@ export default {
   }
   .about {
     padding: 24px 24px 12px 24px;
-    height: 314px;
+    // height: 314px;
     background: rgb(90, 54, 58);
 
     p {
       font-weight: bold;
       padding-top: 40px;
       padding-right: 20px;
-      font-size: 14px;
+      font-size: 18px;
+      font-family: font19;
+      line-height: 32px;
+      // font-weight: normal;
     }
   }
   .about-img {
@@ -439,6 +461,7 @@ export default {
     background: #2d2e2d;
     padding: 12px 0;
     .swiper-slide {
+      background: rgb(10, 7, 8);
       width: 160px !important;
     }
     .img_c1 {
@@ -461,11 +484,13 @@ export default {
     h4 {
       font-size: 23px;
       color: #262626;
+      font-family: Oswald-Medium;
     }
     p {
-      font-size: 13px;
+      font-size: 16px;
       line-height: 24px;
       padding: 30px 0;
+      font-family: font18;
     }
     img {
       width: 100%;
@@ -487,6 +512,7 @@ export default {
       span {
         font-size: 15px;
         color: #2e3238;
+        font-family: font16;
       }
     }
   }
@@ -499,31 +525,41 @@ export default {
   .product {
     padding: 24px 10px 12px 10px;
     background: rgb(90, 54, 58);
+    h4 {
+      margin: 20px 10px 40px;
+    }
     .product-item {
       padding: 10px 0;
       text-align: center;
+
+      font-family: font20;
       img {
         width: 100%;
       }
       h5 {
-        font-size: 16px;
+        font-size: 18px;
         color: #ffffff;
         padding-top: 16px;
+        font-family: font20;
+        font-weight: normal;
       }
       p {
-        font-size: 13px;
+        font-size: 16px;
         color: #c7c7c7;
         padding-top: 6px;
+        font-family: font20;
       }
     }
     .paging {
       padding: 68px 0 20px;
       color: #ffffff;
       text-align: center;
+
+      font-family: font20;
       // #999
       span {
         padding: 0 20px;
-        font-size: 16px;
+        font-size: 18px;
         letter-spacing: 4px;
       }
     }
@@ -558,13 +594,16 @@ export default {
     padding: 24px;
     text-align: center;
     h4 {
-      font-size: 22px;
+      font-size: 24px;
       color: #2d2e2d;
+      font-family: Oswald-Medium;
     }
     h5 {
       padding-top: 34px;
       color: #646464;
       padding-bottom: 50px;
+      font-size: 14px;
+      font-family: Oswald-Medium;
     }
     img {
       width: 150px;
@@ -581,14 +620,18 @@ export default {
       height: 44px;
     }
     h4 {
-      font-size: 17px;
+      font-size: 20px;
       color: #2d2e2d;
       padding: 10px 0 20px;
+      font-weight: normal;
+      font-family: font21;
     }
     p {
       color: #646464;
       line-height: 24px;
       width: 90%;
+      font-size: 16px;
+      font-family: font18;
     }
   }
   .news {
@@ -598,10 +641,12 @@ export default {
       font-size: 23px;
       font-weight: bold;
       color: #ffffff;
+      font-family: Oswald-Medium;
       padding: 0 20px 20px;
     }
     .news-item {
       padding: 20px 0;
+      font-family: font22;
       .news-item-content {
         padding: 24px;
       }
@@ -610,15 +655,15 @@ export default {
       }
       h5 {
         padding: 0 0 24px 0;
-        font-size: 12px;
+        font-size: 14px;
         color: #ffffff;
       }
       h4 {
-        font-size: 22px;
+        font-size: 24px;
         color: #ffffff;
       }
       p {
-        font-size: 16px;
+        font-size: 18px;
         color: #ffffff;
         padding-top: 12px;
         line-height: 24px;
@@ -649,7 +694,7 @@ export default {
             display: inline-block;
             fill: transparent;
             stroke: #e84a43;
-            stroke-width: 1.5px;
+            stroke-width: 2px;
             transition: fill 250ms;
           }
         }
@@ -670,11 +715,13 @@ export default {
         p {
           font-size: 17px;
           color: #ffffff;
+          font-family: caudex;
         }
         h4 {
           font-size: 14px;
           color: #ffffff;
           padding-top: 40px;
+          font-family: font16;
         }
       }
       .doit {
@@ -719,6 +766,7 @@ export default {
   .caismining {
     padding: 24px 20px;
     background: #2d2e2d;
+    font-family: font20;
     img {
       width: 36px;
       height: 36px;
@@ -727,12 +775,12 @@ export default {
     p {
       margin: 8px 0 6px;
       color: #ffffff;
-      font-size: 14px;
+      font-size: 16px;
     }
     a {
       text-decoration: underline;
       color: #c7c7c7;
-      font-size: 14px;
+      font-size: 16px;
       display: inline-block;
       margin-top: 12px;
     }
@@ -745,11 +793,13 @@ export default {
       span {
         padding-left: 8px;
         color: #ffffff;
+        font-size: 16px;
+        margin-bottom: 4px;
       }
       svg {
         fill: #ffffff;
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
       }
     }
   }
@@ -791,9 +841,10 @@ export default {
       margin: 50px auto;
       line-height: 50px;
       text-align: center;
-      font-size: 14px;
+      font-size: 16px;
       border: 1px solid rgba(255, 255, 255, 0.49);
       color: rgba(255, 255, 255, 0.7);
+      font-family: font20;
     }
   }
 }
@@ -803,6 +854,7 @@ export default {
   font-size: 21px;
   line-height: 50px;
   position: relative;
+  font-family: Oswald-Medium;
 }
 .title-line::before {
   content: "";

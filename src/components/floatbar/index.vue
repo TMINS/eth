@@ -126,6 +126,7 @@ export default {
 
 <style lang="scss" scoped>
 .floatbar {
+  font-family: font18;
   .btn {
     width: 50px;
     height: 50px;
@@ -190,7 +191,7 @@ export default {
         .title {
           padding: 6px 8px;
           color: #1d2d3c;
-
+          font-size: 14px;
           background: #fff;
           margin-right: 20px;
           border-radius: 4px;
