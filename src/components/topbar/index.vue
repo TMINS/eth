@@ -1,6 +1,6 @@
 <template>
   <div class="topbar flex">
-    <div class="topbar-title">
+    <div class="topbar-title font2">
       <p>CAIS <span></span></p>
       <p>MINING</p>
       <p>BLOCKCHAIN</p>
@@ -10,7 +10,7 @@
       <span class="center"></span>
       <span class="bottom"></span>
     </div>
-    <div class="menu-list" v-if="active">
+    <div class="menu-list" v-show="active">
       <div>
         <p
           :class="route == '/home' ? 'active' : ''"
@@ -97,15 +97,16 @@ export default {
   padding: 0 24px;
   .topbar-title {
     color: #ffffff;
-    font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 16px;
+
     span {
       display: inline-block;
       width: 8px;
       height: 8px;
       transform: rotate(45deg);
       background: rgba(232, 192, 97, 1);
-      margin-left: 4px;
+      margin-left: 2px;
     }
   }
   .menu {
@@ -151,13 +152,16 @@ export default {
     left: 0;
     background: rgba(10, 10, 10, 1);
     padding: 36px;
+    transition: all 0.3s;
+
     p {
       height: 50px;
       line-height: 50px;
       align-items: center;
-      font-size: 13px;
+      font-size: 16px;
       color: #ffffff;
       font-weight: bold;
+      font-family: font16;
       svg {
         color: #ffffff;
       }

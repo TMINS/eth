@@ -67,9 +67,10 @@ export default {
   .head {
     padding: 40px 0;
     p {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 24px;
       padding-top: 20px;
+      font-family: font18;
     }
   }
   .product {
@@ -83,12 +84,14 @@ export default {
     padding: 32px 29px;
     h4 {
       text-align: center;
-      font-size: 20px;
+      font-size: 22px;
       letter-spacing: 4px;
+      font-family: font16;
     }
     p {
       margin: 12px 0;
-      font-size: 14px;
+      font-size: 16px;
+      font-family: font20;
       text-align: center;
     }
   }
