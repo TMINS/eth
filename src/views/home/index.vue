@@ -50,19 +50,39 @@
     <div class="banner" v-scroll-reveal.reset>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img class="img_c1" src="~@/assets/product1.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img class="img_c1" src="~@/assets/product1.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img class="img_c1" src="~@/assets/product1.png" alt="" />
-          </div>
-          <div class="swiper-slide">
-            <img class="img_c1" src="~@/assets/product1.png" alt="" />
+          <div
+            class="swiper-slide"
+            v-for="(item, index) in bannerList"
+            :key="index"
+            @click="bannerEvent(index)"
+          >
+            <img class="img_c1" :src="item.img" alt="" />
+            <div class="active" v-if="item.active">
+              <svg
+                viewBox="0 0 18 15"
+                fill="currentColor"
+                width="21"
+                height="21"
+                @click.stop="bannerLike(index)"
+              >
+                <path
+                  v-if="!item.like"
+                  fill="#262626"
+                  d="M9,15c-0.1,0-0.2,0-0.3-0.1c-0.2-0.2-6-3.9-7.8-7C0,6.3-0.3,4.5,0.3,3C0.8,1.7,1.7,0.7,3,0.3	C5.3-0.5,7.7,0.7,9,2.4c1.4-1.9,4-2.9,6.1-2.1c1.2,0.5,2.2,1.4,2.6,2.6c0.6,1.5,0.3,3.3-0.6,5c-1.8,3.3-7.5,6.8-7.8,7	C9.2,15,9.1,15,9,15z M4.6,1.2c-0.4,0-0.8,0.1-1.2,0.2c-0.9,0.3-1.6,1-1.9,2C1,4.6,1.2,6,2,7.3c1.4,2.5,5.8,5.5,7.1,6.3	c1.2-0.8,5.6-3.7,7-6.3c0.8-1.4,1-2.8,0.5-4c-0.3-0.9-1-1.6-1.9-1.9l0,0c-1.9-0.7-4.3,0.7-5.1,2.4c-0.2,0.4-0.9,0.4-1.1,0	C7.8,2.4,6.3,1.2,4.6,1.2z"
+                ></path>
+                <path
+                  v-else
+                  fill="currentColor"
+                  d="M9,15c-0.1,0-0.2,0-0.3-0.1c-0.2-0.2-6-3.9-7.8-7C0,6.3-0.3,4.5,0.3,3C0.8,1.7,1.7,0.7,3,0.3	C5.3-0.5,7.7,0.7,9,2.4c1.4-1.9,4-2.9,6.1-2.1c1.2,0.5,2.2,1.4,2.6,2.6c0.6,1.5,0.3,3.3-0.6,5c-1.8,3.3-7.5,6.8-7.8,7	C9.2,15,9.1,15,9,15z"
+                  style="color: red"
+                ></path>
+              </svg>
+            </div>
           </div>
         </div>
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev" @click="prev"></div>
+        <div class="swiper-button-next" @click="next"></div>
       </div>
       <h4 class="title-line">MININIG NOW</h4>
     </div>
@@ -301,6 +321,7 @@ import compList from "./comp";
 import newsList from "./news";
 import operateList from "./operate";
 import bannerNewsList from "./bannerNews";
+import bannerList from "./banner";
 import computed from "@/components/computed";
 import topbar from "@/components/topbar";
 
@@ -308,11 +329,13 @@ export default {
   data() {
     return {
       productList: [],
+      bannerList: [],
       compList: [],
       newsList: [],
       operateList: [],
       bannerNewsList: [],
       newsIndex: 0,
+      mySwiper: null,
     };
   },
   components: { computed, topbar },
@@ -322,13 +345,15 @@ export default {
     this.newsList = newsList;
     this.operateList = operateList;
     this.bannerNewsList = bannerNewsList;
-
-    new Swiper(".swiper-container", {
+    this.bannerList = bannerList;
+    this.mySwiper = new Swiper(".swiper-container", {
       slidesPerView: "auto",
       centeredSlides: true,
-
       spaceBetween: 10,
-      // pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
   },
   methods: {
@@ -345,6 +370,28 @@ export default {
       } else {
         this.newsIndex--;
       }
+    },
+    bannerEvent(index) {
+      this.bannerList.forEach((item, idx) => {
+        if (index == idx) {
+          item.active = !item.active;
+        } else {
+          item.active = false;
+        }
+      });
+    },
+    bannerLike(index) {
+      this.bannerList.forEach((item, idx) => {
+        if (index == idx) {
+          item.like = !item.like;
+        }
+      });
+    },
+    next() {
+      this.mySwiper.slideNext();
+    },
+    prev() {
+      this.mySwiper.slidePrev();
     },
   },
 };
@@ -463,6 +510,27 @@ export default {
     .swiper-slide {
       background: rgb(10, 7, 8);
       width: 160px !important;
+      position: relative;
+      .active {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(199, 199, 199, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 90px;
+      color: rgba(45, 46, 45, 1);
     }
     .img_c1 {
       width: 160px;

@@ -10,7 +10,7 @@
       <span class="center"></span>
       <span class="bottom"></span>
     </div>
-    <div class="menu-list" v-show="active">
+    <div class="menu-list" :class="fade" @touchmove.prevent>
       <div>
         <p
           :class="route == '/home' ? 'active' : ''"
@@ -71,14 +71,27 @@ export default {
       active: false,
       selectVal: "en",
       route: "home",
+      fade: "",
     };
   },
+  watch: {
+    active() {
+      if (this.active) {
+        this.fade = "fadeIn";
+      } else {
+        this.fade = "fadeOut";
+      }
+    },
+  },
+  created() {},
   mounted() {
     this.route = this.$route.path;
   },
   methods: {
     routeLink(path) {
-      this.$router.push({ path });
+      this.$router.push({
+        path,
+      });
     },
   },
 };
@@ -146,12 +159,11 @@ export default {
     height: 100vh;
     position: absolute;
     z-index: 333;
-    top: 0;
+    opacity: 0;
+    top: -2000px;
     left: 0;
     background: rgba(10, 10, 10, 1);
     padding: 36px;
-    transition: all 0.3s;
-
     p {
       height: 50px;
       line-height: 50px;
@@ -199,6 +211,42 @@ export default {
       left: 14px;
       transform: translateY(-50%);
     }
+  }
+  .fadeIn {
+    // display: block;
+    opacity: 0;
+    animation: fadeIn both 0.3s;
+  }
+  .fadeOut {
+    // display: none;
+    opacity: 0;
+    animation: fadeOut both 0.3s;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+    display: block;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    opacity: 0;
+    top: -2000px;
   }
 }
 </style>
